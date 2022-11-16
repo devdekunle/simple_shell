@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * sel_func - chooses the right function to call
+ * sel_func - A function that chooses the right function to call
  *@c: symbol of the format specifier
  * Return: pointer to the chosen function.
  */
@@ -11,13 +11,12 @@ int (*sel_func(char c))(va_list pams)
 
 	int i;
 
-	fa k[] =
-	{
+	fa k[] = {
 		{'s', prntstr}, {'c', _putchar},
 		{'b', prntbnry}, {'d', _prntnum},
 		{'o', prntoct}, {'i', _prntnum},
 		{'u', prnt_unsigned}, {'x', hex},
-		{'X', hex0},{'S', cus_prntstr},
+		{'X', hex0}, {'S', cus_prntstr},
 		{'\0', NULL}
 	};
 
