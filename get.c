@@ -46,7 +46,7 @@ while (cenv[i] != NULL)
 }
 
 /**
- * _print_env - print current environment variable
+ * _print_env - prints the current environment variable
  *
  * @env: current env. variable
  *
