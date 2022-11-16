@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * hex0 - prints number in uppercase hexamdecimal from va_list
+ * hex0 - A function that prints number in uppercase hexamdecimal from va_list
  *@pams: the va_list from which the number is extracted.
  * Return: number of digits printed.
  */
@@ -65,6 +65,11 @@ int hex2(int a)
 	return (count_hex(k));
 }
 
+/**
+*count_hex - counts an arguement
+*@n: A place holder
+*Return: returns 1
+*/
 
 int count_hex(unsigned int n)
 {
