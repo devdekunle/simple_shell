@@ -24,13 +24,15 @@ int shell(char **env)
 	{
 		i = 0;
 		terminal = isatty(STDIN_FILENO);
-		write(STDOUT_FILENO, "#Cisfun$ ", 10);
+		write(STDOUT_FILENO, "($) ", 4);
 		read_line = getline(&buffer, &n, stdin);
 		if (read_line == -1)
 		{
 			_printf("logout\n");
 			return (0);
 		}
+		if (_strcmp(buffer, "\n") == 0)
+			continue;
 		token = strtok(buffer, "\n");
 		token = strtok(token, " ");
 
