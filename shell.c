@@ -3,7 +3,7 @@
 /**
  * shell - An Inbuilt shell
  *
- * @env: environment variable
+ * @env: environment variables
  *
  * Return: (0) always success
  */
