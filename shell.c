@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * shell - Inbuilt shell
+ * shell - An Inbuilt shell
  *
  * @env: environment variable
  *
@@ -32,10 +32,10 @@ int shell(char **env)
 		i = 0;
 		terminal = isatty(STDIN_FILENO);
 			if (terminal)
-		
+
 		write(STDOUT_FILENO, "($) ", 4);
 		read_line = getline(&buffer, &n, stdin);
-		
+
 		if (read_line == -1)
 		{
 			printf("logout\n");
