@@ -47,6 +47,8 @@ int shell(char **env)
 		if (_strcmp(buffer, "\n") == 0)
 			continue;
 		token = strtok(buffer, "\n");
+		if (_strcmp(token, " ") == 0)
+			continue;
 		token = strtok(token, " ");
 
 		while (token)
