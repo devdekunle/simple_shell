@@ -1,6 +1,6 @@
 #include "main.h"
 /**
-*_strcat - concatenate strings
+*_strcat - A function that concatenate strings
 *@dest: destination
 *@src: src
 *Return: dest
