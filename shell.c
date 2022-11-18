@@ -17,8 +17,15 @@ int shell(char **env)
 	pid_t pid;
 	struct stat st;
 
+	i = 0;
+	while(env[i])
+	{
+		envp[i] = env[i];
+		i++;
+	}
+	envp[i] = NULL;
 	read_line = n = 0;
-	path = NULL;
+	token = buffer = path = ret = NULL;
 	terminal = 1;
 	while (terminal)
 	{
@@ -29,6 +36,9 @@ int shell(char **env)
 		if (read_line == -1)
 		{
 			printf("logout\n");
+			free(buffer);
+			if (ret != NULL)
+				free(ret);
 			return (0);
 		}
 		if (_strcmp(buffer, "\n") == 0)
@@ -44,7 +54,12 @@ int shell(char **env)
 		}
 		args[i] = NULL;
 		if (_strcmp(args[0], "exit") == 0)
+		{
+			free(buffer);
+			if (ret != NULL)
+				free(ret);
 			exit(EXIT_SUCCESS);
+		}
 		if ((_strcmp(args[0], "env") == 0))
 		{	_print_env(env);
 			continue;
@@ -74,5 +89,6 @@ int shell(char **env)
 			wait(&status);
 	}
 	free(buffer);
+	free(ret);
 	return (0);
 }
