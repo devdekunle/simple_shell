@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * findpath - find the full path of an executable
+ * findpath -A function that finds the full path of an executable
  *
  * @cmnd: The command/executable
  *
