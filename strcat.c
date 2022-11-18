@@ -1,3 +1,10 @@
+#include "main.h"
+/**
+*_strcat - concatenate strings
+*@dest: destination
+*@src: src
+*Return: dest
+*/
 char *_strcat(char *dest, char *src)
 
 {
