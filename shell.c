@@ -18,7 +18,7 @@ int shell(char **env)
 	struct stat st;
 
 	i = 0;
-	while(env[i])
+	while(env[i] != NULL)
 	{
 		envp[i] = env[i];
 		i++;
@@ -31,11 +31,11 @@ int shell(char **env)
 	{
 		i = 0;
 		terminal = isatty(STDIN_FILENO);
-		if (terminal)
-		{
-			write(STDOUT_FILENO, "($) ", 4);
-			read_line = getline(&buffer, &n, stdin);
-		}
+			if (terminal)
+		
+		write(STDOUT_FILENO, "($) ", 4);
+		read_line = getline(&buffer, &n, stdin);
+		
 		if (read_line == -1)
 		{
 			printf("logout\n");
