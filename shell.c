@@ -11,7 +11,7 @@
 int shell(char **env)
 {
 	ssize_t read_line;
-	char *token, *buffer, *path, *ret, *args[100], *envp[] = {NULL};
+	char *token, *buffer, *path, *ret, *args[100], *envp[100];
 	size_t n;
 	int i, k, status, terminal;
 	pid_t pid;
@@ -31,8 +31,11 @@ int shell(char **env)
 	{
 		i = 0;
 		terminal = isatty(STDIN_FILENO);
-		/*write(STDOUT_FILENO, "($) ", 4);*/
-		read_line = getline(&buffer, &n, stdin);
+		if (terminal)
+		{
+			write(STDOUT_FILENO, "($) ", 4);
+			read_line = getline(&buffer, &n, stdin);
+		}
 		if (read_line == -1)
 		{
 			printf("logout\n");
